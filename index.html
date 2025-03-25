@@ -16,6 +16,7 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            text-align: center;
         }
 
         .container {
@@ -31,6 +32,7 @@
         h1 {
             margin-bottom: 20px;
             color: #fff;
+            text-align: center;
         }
 
         .board {
@@ -41,6 +43,7 @@
             margin: 0 auto 20px;
             padding: 10px;
             border-radius: 10px;
+            justify-content: center;
         }
 
         .cell {
@@ -109,8 +112,20 @@
             font-size: 1em;
             margin-bottom: 10px;
             color: #fff;
-            text-align: center;
+            display: flex; /* Use flexbox to position items horizontally */
+            justify-content: space-between; /* Distribute space between items */
+            align-items: center; /* Vertically center items */
+            width: 100%; /* Ensure the score container takes full width */
         }
+        #x-score-container {
+            margin-right: auto; /* Push X score to the left */
+            margin-left: 0;
+        }
+        #o-score-container{
+            margin-left: auto; /* Push O score to the right */
+            margin-right: 0;
+        }
+
        @media (max-width: 600px) {
             .container {
                 padding: 15px;
@@ -156,7 +171,8 @@
         </div>
         <div class="message"></div>
          <div class="score">
-            Player X: <span id="x-score">0</span>  |  Player O: <span id="o-score">0</span>
+            <div id="x-score-container">Player X: <span id="x-score">0</span></div>
+            <div id="o-score-container">Player O: <span id="o-score">0</span></div>
         </div>
         <div class="controls">
             <button class="reset-button">Reset Game</button>
